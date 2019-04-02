@@ -1,0 +1,14 @@
+[
+    {
+      "fruitType": "Banana",
+      "expirationDate": "10",
+      "dateOfDelivery": "10/07/2017",
+      "price": "100"
+    },
+    {
+      "fruitType": "Apple",
+      "expirationDate": "5",
+      "dateOfDelivery": "10/07/2017",
+      "price": "70"
+    }
+  ]
