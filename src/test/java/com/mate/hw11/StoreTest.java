@@ -92,6 +92,8 @@ public class StoreTest {
         } catch (IOException e) {
             LOGGER.error(e.getMessage());
         }
+        store.load(STORE);
+        assertTrue(fruits.containsAll(store.getStoreDatabase()));
     }
 
     @Test

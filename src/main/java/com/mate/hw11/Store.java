@@ -13,11 +13,11 @@ import org.codehaus.jackson.map.ObjectMapper;
 
 public class Store {
     private static final Logger LOGGER = Logger.getLogger(Store.class);
-    private List<Fruit> storeDatabase;
     private static final ObjectMapper mapper = new ObjectMapper();
-
-    private static List<Fruit> fruits;
     private static final String PATH = "delivery.json";
+
+    private List<Fruit> storeDatabase;
+    private static List<Fruit> fruits;
 
     public Store() {
         storeDatabase = new ArrayList<>();
@@ -33,7 +33,6 @@ public class Store {
             delivery = mapper.readValue(inputStream, new TypeReference<List<Fruit>>() {
             });
             storeDatabase.addAll(delivery);
-            delivery.forEach(del -> System.out.println(del.getFruitType().toString()));
         } catch (IOException e) {
             LOGGER.error(e.getMessage());
         }
@@ -62,7 +61,6 @@ public class Store {
         List<Fruit> listSpoiledFruits = new ArrayList<>();
         storeDatabase.forEach(fruit -> {
             LocalDate spoiledAt = fruit.getDateOfDelivery().plusDays(fruit.getExpirationDate());
-            System.out.println(spoiledAt.toString());
             if (date.isAfter(spoiledAt)) {
                 listSpoiledFruits.add(fruit);
             }
@@ -76,7 +74,6 @@ public class Store {
 
         storeDatabase.forEach(fruit -> {
             LocalDate spoiledAt = fruit.getDateOfDelivery().plusDays(fruit.getExpirationDate());
-            System.out.println(spoiledAt.toString());
             if (date.isAfter(spoiledAt) && (fruit.getFruitType() == type)) {
                 listSpoiledFruits.add(fruit);
             }
