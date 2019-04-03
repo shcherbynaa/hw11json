@@ -65,7 +65,6 @@ public class Store {
                 listSpoiledFruits.add(fruit);
             }
         });
-        listSpoiledFruits.forEach(fruit -> System.out.println(fruit));
         return listSpoiledFruits;
     }
 
@@ -78,8 +77,6 @@ public class Store {
                 listSpoiledFruits.add(fruit);
             }
         });
-
-        listSpoiledFruits.forEach(fruit -> System.out.println(fruit));
         return listSpoiledFruits;
     }
 
